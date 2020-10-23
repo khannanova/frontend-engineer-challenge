@@ -1,0 +1,64 @@
+.top-actions {
+  padding-top: $base-gutter * 3;
+  padding-bottom: $base-gutter * 5;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: $base-gutter * 3;
+    padding-right: $base-gutter * 3;
+    max-width: $max;
+    margin: 0 auto;
+
+    @include md {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: $base-gutter * 6;
+      padding-right: $base-gutter * 6;
+    }
+  }
+}
+
+.top-logo {
+  width: 200px;
+  background-color: $secondary-color;
+  padding-top: $base-gutter * 2;
+  padding-bottom: $base-gutter * 2;
+  margin-bottom: $base-gutter * 2;
+  border-radius: $rounded;
+  text-align: center;
+  cursor: pointer;
+
+  @include md {
+    margin-bottom: 0;
+  }
+}
+
+.top-menu {
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+      flex-direction: row;
+    }
+  }
+  li {
+    padding: $base-gutter * 2 $base-gutter * 3;
+    text-align: center;
+    margin-top: $base-gutter;
+    margin-bottom: $base-gutter;
+    border-radius: $rounded;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      color: $font-color-white;
+      background-color: $accent-color;
+    }
+  }
+}

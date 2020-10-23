@@ -1,0 +1,67 @@
+.top-voted {
+  padding: $base-gutter * 8 $base-gutter * 3;
+  margin-bottom: $base-gutter * 8;
+
+  @include md {
+    padding: $base-gutter * 10 $base-gutter * 6;
+  }
+
+  h2 {
+    font-size: 1.625rem;
+    font-weight: 600;
+    padding-bottom: $base-gutter * 4;
+
+    @include md {
+      font-size: 1.75rem;
+      padding-bottom: $base-gutter * 6;
+    }
+  }
+
+  .books-list {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+.book {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $base-color;
+  border-radius: $rounded;
+  padding: $base-gutter * 3;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  img {
+    width: 150px;
+    border-radius: $rounded;
+  }
+
+  .position {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $accent-color;
+    border-radius: 100%;
+    border: 2px solid;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    font-weight: 600;
+    padding-top: $base-gutter * 3;
+    padding-bottom: $base-gutter;
+  }
+
+  .synopsis {
+    padding-top: $base-gutter * 4;
+    font-size: 0.9375rem;
+  }
+}

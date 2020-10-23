@@ -1,0 +1,82 @@
+.main {
+  background-color: $white-color;
+  border-radius: $rounded;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 1.875rem;
+    font-weight: 500;
+    padding: $base-gutter * 4 $base-gutter * 3;
+
+    @include md {
+      font-size: 2.5rem;
+      padding: $base-gutter * 7 $base-gutter * 6;
+    }
+  }
+}
+
+.featured-book {
+  position: relative;
+  background-color: $base-color;
+  padding: $base-gutter * 8 $base-gutter * 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include md {
+    padding-left: $base-gutter * 6;
+    padding-right: $base-gutter * 6;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  img {
+    border-radius: $rounded;
+    max-width: 265px;
+  }
+
+  .recommended {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $font-color-white;
+    background-color: $accent-color;
+    padding: $base-gutter $base-gutter * 2;
+    border-bottom-left-radius: $rounded;
+    font-size: 0.875rem;
+  }
+
+  .book-info {
+    padding-top: $base-gutter * 4;
+
+    @include md {
+      padding-top: 0;
+      padding-left: $base-gutter * 4;
+    }
+  }
+
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-bottom: $base-gutter * 2;
+
+    @include md {
+      font-size: 1.875rem;
+    }
+  }
+  .synopsis {
+    font-size: 0.9375rem;
+    padding-top: $base-gutter * 2;
+
+    @include md {
+      font-size: 1rem;
+    }
+
+    p:first-child {
+      margin-bottom: $base-gutter * 2;
+    }
+  }
+}

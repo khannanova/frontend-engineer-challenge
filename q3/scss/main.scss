@@ -1,0 +1,10 @@
+@import "base/reset";
+@import "base/variables";
+@import "base/base";
+
+@import "base/mixins.scss";
+
+@import "components/header";
+@import "components/featured-book";
+@import "components/top-voted";
+@import "components/footer";

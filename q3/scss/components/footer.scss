@@ -1,0 +1,25 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $dark-color;
+  color: $font-color-white;
+
+  .container {
+    padding: $base-gutter * 3;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    padding-left: $base-gutter * 3;
+    padding-right: $base-gutter * 3;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
