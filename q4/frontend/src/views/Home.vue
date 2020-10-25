@@ -46,7 +46,6 @@ export default {
         .get(`${process.env.VUE_APP_BASE_URL}/books`)
         .then(response => {
           this.books = response.data.books;
-          console.log(this.books);
         })
         .catch(error => {
           this.error = error.toString();

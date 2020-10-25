@@ -19,14 +19,7 @@
           <span class="books__upvotes-counter">
             {{ book.upvotes | pluralize("upvote") }}
           </span>
-          <button
-            class="book__button"
-            :class="
-              book.upvoted ? 'book__button--upvoted' : 'book__button--upvote'
-            "
-          >
-            {{ book.upvoted ? "Upvoted" : "Upvote" }}
-          </button>
+          <UpvoteButton :upvoted="book.upvoted" />
         </div>
       </header>
 
@@ -43,8 +36,12 @@
 
 <script>
 import axios from "axios";
+import UpvoteButton from "@/components/UpvoteButton";
 
 export default {
+  components: {
+    UpvoteButton
+  },
   data() {
     return {
       loading: false,
@@ -67,7 +64,6 @@ export default {
       axios
         .get(`${process.env.VUE_APP_BASE_URL}/books/${bookId}`)
         .then(response => {
-          if (this.$route.params.id !== bookId) return;
           this.book = response.data;
           document.title = this.book.title;
         })
@@ -117,32 +113,6 @@ $break-mobile: 640px;
 
     @media (max-width: $break-mobile) {
       width: 200px;
-    }
-  }
-}
-
-.book__button {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  border: 1px solid #5850ec;
-
-  &--upvote {
-    background-color: #5850ec;
-    color: #fff;
-    &:hover {
-      background-color: #6875f5;
-    }
-  }
-
-  &--upvoted {
-    background-color: #fff;
-    color: #5850ec;
-    cursor: unset;
-    &:focus {
-      outline: unset;
     }
   }
 }

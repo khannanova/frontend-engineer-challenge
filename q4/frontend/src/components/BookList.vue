@@ -9,7 +9,7 @@
       <div class="book__content">
         <div class="book__header">
           <router-link :to="`books/${book.slug}`" class="book__title">
-            <h2 class="">{{ index + 1 }}. {{ book.title }}</h2>
+            <h2>{{ index + 1 }}. {{ book.title }}</h2>
           </router-link>
           <span class="book__rating">{{ book.rating }}/10</span>
         </div>
@@ -18,14 +18,7 @@
         <p class="book__synopsis">{{ book.synopsis | truncate(200) }}</p>
 
         <div class="book__upvotes">
-          <button
-            class="book__button"
-            :class="
-              book.upvoted ? 'book__button--upvoted' : 'book__button--upvote'
-            "
-          >
-            {{ book.upvoted ? "Upvoted" : "Upvote" }}
-          </button>
+          <UpvoteButton :upvoted="book.upvoted" />
 
           <span class="books__upvotes-counter">
             {{ book.upvotes | pluralize("upvote") }}
@@ -37,29 +30,24 @@
 </template>
 
 <script>
+import UpvoteButton from "@/components/UpvoteButton";
+
 export default {
   name: "BookList",
   props: {
     books: {
-      slug: String,
-      author: String,
-      title: String,
-      cover: String,
-      rating: String,
-      synopsis: String,
-      upvoted: Boolean,
-      upvotes: Number
+      type: Array,
+      required: true
     }
+  },
+  components: {
+    UpvoteButton
   }
 };
 </script>
 
 <style scoped lang="scss">
 $break-mobile: 640px;
-
-h1 {
-  text-align: center;
-}
 
 .book {
   display: flex;
@@ -122,32 +110,6 @@ h1 {
 .book__rating {
   font-weight: 600;
   color: #5850ec;
-}
-
-.book__button {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  border: 1px solid #5850ec;
-
-  &--upvote {
-    background-color: #5850ec;
-    color: #fff;
-    &:hover {
-      background-color: #6875f5;
-    }
-  }
-
-  &--upvoted {
-    background-color: #fff;
-    color: #5850ec;
-    cursor: unset;
-    &:focus {
-      outline: unset;
-    }
-  }
 }
 
 .book__synopsis {
