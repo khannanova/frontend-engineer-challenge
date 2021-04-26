@@ -1,6 +1,6 @@
 # Frontend Engineer Challenge — SPA
 
-A SPA built with Vue.js and SCSS.
+A SPA built with Vue.js and SCSS.<br>
 Demo: https://vue-challenge.vercel.app/
 
 ## Task
