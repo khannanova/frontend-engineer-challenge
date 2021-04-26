@@ -1,6 +1,9 @@
 # Frontend Engineer Challenge — SPA
 
 A SPA built with Vue.js and SCSS.
+Demo: https://vue-challenge.vercel.app/
+
+## Task
 
 Display all available books returned from the API. Display a single book information, highlighting the cover and displaying the full synopsis.
 
